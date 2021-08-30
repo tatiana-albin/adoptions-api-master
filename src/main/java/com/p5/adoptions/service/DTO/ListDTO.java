@@ -1,12 +1,11 @@
 package com.p5.adoptions.service.DTO;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListDTO<T> {
 
     private Long totalCount;
-    private List<T> data = new ArrayList<>();
+    private List<T> data;
 
     public ListDTO() {
     }
@@ -20,7 +19,7 @@ public class ListDTO<T> {
         return totalCount;
     }
 
-    public ListDTO setTotalCount(Long totalCount) {
+    public ListDTO<T> setTotalCount(Long totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -29,7 +28,7 @@ public class ListDTO<T> {
         return data;
     }
 
-    public ListDTO setData(List<T> data) {
+    public ListDTO<T> setData(List<T> data) {
         this.data = data;
         return this;
     }

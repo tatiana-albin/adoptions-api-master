@@ -7,14 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CatAdapter {
-    public static CatDTO toDTO(Cat cat){
-        return new CatDTO()
-                .setId(cat.getId())
-                .setName(cat.getName())
-                .setPhoto(cat.getPhoto());
-    }
-
-    public static Cat fromDTO(CatDTO catDTO){
+    public static Cat fromDTO(CatDTO catDTO) {
         Cat cat = new Cat();
 
         cat.setId(catDTO.getId());
@@ -23,14 +16,16 @@ public class CatAdapter {
 
         return cat;
     }
-    
-    public static List<Cat> fromDTOList(List<CatDTO> catDTOList){
+
+    public static CatDTO toDTO(Cat cat) {
+        return new CatDTO().setId(cat.getId()).setName(cat.getName()).setPhoto(cat.getPhoto());
+    }
+
+    public static List<Cat> fromDTOList(List<CatDTO> catDTOList) {
         return catDTOList.stream().map(CatAdapter::fromDTO).collect(Collectors.toList());
     }
-    
-    public static List<CatDTO> toDTOList(List<Cat> catList){
+
+    public static List<CatDTO> toDTOList(List<Cat> catList) {
         return catList.stream().map(CatAdapter::toDTO).collect(Collectors.toList());
     }
-            
-    
 }
