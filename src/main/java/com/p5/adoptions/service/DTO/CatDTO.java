@@ -2,6 +2,10 @@ package com.p5.adoptions.service.DTO;
 
 public class CatDTO {
 
+    private Integer id;
+    private String name;
+    private String photo;
+
     public CatDTO() {
     }
 
@@ -10,10 +14,6 @@ public class CatDTO {
         this.name = name;
         this.photo = photo;
     }
-
-    private Integer id;
-    private String name;
-    private String photo;
 
     public Integer getId() {
         return id;
@@ -41,5 +41,4 @@ public class CatDTO {
         this.photo = photo;
         return this;
     }
-
 }

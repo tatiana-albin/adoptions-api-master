@@ -1,16 +1,26 @@
 package com.p5.adoptions.service.DTO;
 
+import com.p5.adoptions.service.validations.OnCreate;
+import com.p5.adoptions.service.validations.OnUpdate;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShelterDTO {
+
+    @NotNull(message = "Id must not be null for update", groups = OnUpdate.class)
+    @Null(message = "Id must be empty or null for creation", groups = OnCreate.class)
+    @Min(value = 1, groups = OnUpdate.class)
     private Integer id;
 
+    @NotBlank
+    @NotNull
     private String name;
-
     private String location;
-
     private List<CatDTO> cats = new ArrayList<>();
     private List<DogDTO> dogs = new ArrayList<>();
 
