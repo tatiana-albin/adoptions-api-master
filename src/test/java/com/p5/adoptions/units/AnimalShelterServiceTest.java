@@ -30,7 +30,7 @@ public class AnimalShelterServiceTest
     {
         this.shelterDTO = new ShelterDTO()
                 .setId(123)
-                .setName("Pentalog's Shelter")
+                .setName("Animal Shelter")
                 .setLocation("Iasi")
                 .setCats(Collections.emptyList())
                 .setDogs(Collections.emptyList());
